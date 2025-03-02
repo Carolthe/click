@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 export default function Pag2 (){
    
 
-
     const [contador, setContador] = useState(0)
 
     function encremento(){
