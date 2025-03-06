@@ -22,7 +22,7 @@ export default function Pag1(props) {
   function sucesso(dados, onSubmit) {
     onSubmit.preventDefault()
    
-
+    
     fetch("http://localhost:3000/dados", {
       method: "Post",
       body: JSON.stringify(dados),
@@ -31,8 +31,16 @@ export default function Pag1(props) {
         "Accept": "application/json" 
       }
     })
-    
-    console.log(dados)
+    .then(resposta => resposta.json())
+    .then(data=>{ 
+      if(data.mensagem === "Sucesso!"){
+        navigateToAbout()
+      }else{
+        alert("erro")
+      }
+    })
+    .catch(()=> alert("erro"))
+  
   }
 
 
