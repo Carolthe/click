@@ -1,12 +1,8 @@
-import { useEffect } from "react";
 import { FaTrashCan } from "react-icons/fa6";
 
 export default function Card (){
 
-    useEffect(dadosFront){
-
-
-    },[]
+  
 
 
     return(

@@ -9,7 +9,7 @@ export default function Pag1(props) {
 
   const navigate = useNavigate()
   const navigateToAbout = () => {
-    navigate('/pag2')
+    navigate('/card')
   }
   const { control, handleSubmit } = useForm({
     defaultValues: {
