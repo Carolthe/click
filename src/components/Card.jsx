@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
 
 export default function Card (){
 
-    const [dadosCard, setDadosCard] = useState ("")
+    const [dadosCard, setDadosCard] = useState ([])
 
   useEffect( ()=>{
     fetch ("http://localhost:3000/dados", {
@@ -24,9 +24,13 @@ export default function Card (){
     return(
         <div className="flex justify-center">
         <div className="w-[250px] bg-slate-100 font-semibold border-[1px] h-[250px] border-blue-400 p-[20px]">
-            <p>Nome:{dadosCard}</p>
-            <p>Número Inicial:</p>
-            <p>Número Limite:</p>  
+        {dadosCard.map((item, index) => (
+            <div key={index}>
+                <p>Nome: {item.name}</p>
+                <p>Número Inicial: {item.numeroInicial}</p>
+                <p>Número Limite: {item.numeroLimite}</p>
+            </div>
+        ))}
         <div className="flex justify-end mt-[120px]">
         <button ><FaTrashCan /></button> 
         </div>
