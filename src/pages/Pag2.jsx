@@ -22,7 +22,7 @@ export default function Pag2 (){
     const navigate = useNavigate();
 
     const navigatePag1 = () => {
-       navigate('/pag1');
+       navigate('/');
      };
 
     return(
