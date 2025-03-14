@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CardDados from "./CardDados";
 
-export default function Card (){
+export default function Card (props){
 
    
 
@@ -23,17 +23,15 @@ export default function Card (){
 },[])
 
     
-
     return(
        <div className="grid justify-center">
         <div className="flex flex-wrap mx-[127px]">
         {dadosCard.map((item, index) => (
         <div key={index}>
-        <CardDados item={item}/>
+        <CardDados item={item} index={index} />
         </div>
         ))}
         </div>
-       
         </div>
     )
 }
