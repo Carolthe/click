@@ -28,11 +28,9 @@ export default function Pag2() {
   }, [navegar]);
 
   function encremento() {
-    if (contador !== numeroLimite) {
+    if (contador < numeroLimite) {
       setContador(contador + 1);
-    } else {
-      alert(`Não pode passar do ${numeroLimite}`);
-    }
+    } 
   }
   function resetar() {
     setContador(0);
@@ -57,6 +55,8 @@ export default function Pag2() {
         onClick={resetar}
         text="Resetar"
       />
+
+      {contador === numeroLimite && 
       <div className="border-[1px] border-red-600 mt-[80px] h-[220px] justify-center flex-col flex p-[20px]">
         <p className="text-[20px] font-semibold text-red-600  ">
           Você Chegou ao limite{" "}
@@ -65,6 +65,7 @@ export default function Pag2() {
           Para continuar, pressione o reset ou volte para o início
         </p>
       </div>
+      }
       <Button
         className="bg-blue-500 w-[300px] text-[23px] text-white mt-[30px] h-[60px]"
         text="Voltar"
